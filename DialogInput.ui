@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>301</width>
-    <height>401</height>
+    <height>378</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,9 +23,9 @@ border-radius: 16px;
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>320</y>
-     <width>281</width>
-     <height>61</height>
+     <y>280</y>
+     <width>131</width>
+     <height>81</height>
     </rect>
    </property>
    <property name="font">
@@ -51,9 +51,9 @@ border-radius: 16px;</string>
    <property name="geometry">
     <rect>
      <x>160</x>
-     <y>200</y>
+     <y>180</y>
      <width>131</width>
-     <height>101</height>
+     <height>81</height>
     </rect>
    </property>
    <property name="font">
@@ -69,7 +69,9 @@ border-radius: 16px;</string>
     <string notr="true">font: 18pt &quot;함초롬돋움&quot;;
 font-weight: bold;
 background-color: #898989;
-border-radius: 16px;</string>
+border-radius: 16px;
+text-align: center;
+padding: 5px;</string>
    </property>
    <property name="text">
     <string>치즈볼</string>
@@ -79,9 +81,9 @@ border-radius: 16px;</string>
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>200</y>
+     <y>180</y>
      <width>131</width>
-     <height>101</height>
+     <height>81</height>
     </rect>
    </property>
    <property name="font">
@@ -107,7 +109,7 @@ border-radius: 16px;</string>
    <property name="geometry">
     <rect>
      <x>105</x>
-     <y>20</y>
+     <y>15</y>
      <width>91</width>
      <height>41</height>
     </rect>
@@ -137,7 +139,7 @@ border-radius: 16px;</string>
      <x>160</x>
      <y>80</y>
      <width>131</width>
-     <height>101</height>
+     <height>81</height>
     </rect>
    </property>
    <property name="font">
@@ -165,7 +167,7 @@ border-radius: 16px;</string>
      <x>10</x>
      <y>80</y>
      <width>131</width>
-     <height>101</height>
+     <height>81</height>
     </rect>
    </property>
    <property name="font">
@@ -191,7 +193,7 @@ border-radius: 16px;</string>
    <property name="geometry">
     <rect>
      <x>100</x>
-     <y>15</y>
+     <y>10</y>
      <width>101</width>
      <height>51</height>
     </rect>
@@ -211,7 +213,7 @@ border-radius: 20px</string>
      <x>5</x>
      <y>75</y>
      <width>141</width>
-     <height>111</height>
+     <height>91</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -229,7 +231,7 @@ border-radius: 20px</string>
      <x>155</x>
      <y>75</y>
      <width>141</width>
-     <height>111</height>
+     <height>91</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -245,9 +247,9 @@ border-radius: 20px</string>
    <property name="geometry">
     <rect>
      <x>155</x>
-     <y>195</y>
+     <y>175</y>
      <width>141</width>
-     <height>111</height>
+     <height>91</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -263,9 +265,9 @@ border-radius: 20px</string>
    <property name="geometry">
     <rect>
      <x>5</x>
-     <y>195</y>
+     <y>175</y>
      <width>141</width>
-     <height>111</height>
+     <height>91</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -281,9 +283,9 @@ border-radius: 20px</string>
    <property name="geometry">
     <rect>
      <x>5</x>
-     <y>315</y>
-     <width>291</width>
-     <height>71</height>
+     <y>275</y>
+     <width>141</width>
+     <height>91</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -293,6 +295,52 @@ border-radius: 20px</string>
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>155</x>
+     <y>275</y>
+     <width>141</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 20pt &quot;함초롬돋움&quot;;
+background-color: #FFFFFF;
+border-radius: 20px</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="BTN_MENU_6">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>280</y>
+     <width>131</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>함초롬돋움</family>
+     <pointsize>18</pointsize>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 18pt &quot;함초롬돋움&quot;;
+font-weight: bold;
+background-color: #898989;
+border-radius: 16px;</string>
+   </property>
+   <property name="text">
+    <string>미정</string>
    </property>
   </widget>
   <zorder>label_6</zorder>
@@ -307,6 +355,8 @@ border-radius: 20px</string>
   <zorder>LE_INPUT_SENSE</zorder>
   <zorder>BTN_MENU_2</zorder>
   <zorder>BTN_MENU_1</zorder>
+  <zorder>label_7</zorder>
+  <zorder>BTN_MENU_6</zorder>
  </widget>
  <resources/>
  <connections/>

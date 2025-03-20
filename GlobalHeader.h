@@ -6,7 +6,6 @@
 #include <QPushButton>
 #include "Logger.h"
 
-//#define BUILD_PATH  "/home/rainbow/Desktop/ChickChick/build/"
 #define BUILD_PATH  "/home/thornch/Desktop/ChickChick_Eng/build/"
 
 inline void SetLEColor(QLineEdit *le, QString color){
@@ -30,7 +29,7 @@ inline void SetBTNColor(QPushButton *btn, QString color){
 #define COLOR_UNDETERMINED "#BFBFBF"
 
 
-#define MENU_TYPE_NUM   5
+#define MENU_TYPE_NUM   6
 
 
 extern int FIRE_NUM;

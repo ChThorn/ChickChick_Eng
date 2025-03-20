@@ -36,9 +36,13 @@ MainWindow::MainWindow(QWidget *parent)
 
     QImage logo;
     QString build_path = BUILD_PATH;
-    QString logo_path = appPath + "SETTING/logo.jpg";
+    QString logo_path = appPath + "SETTING/STS_NEWLG.jpg";
     logo.load(logo_path, "jpg");
-    ui->LB_LOGO->setPixmap(QPixmap::fromImage(logo).scaled(ui->LB_LOGO->size()));
+//    logo.load(logo_path);
+//    ui->LB_LOGO->setPixmap(QPixmap::fromImage(logo).scaled(ui->LB_LOGO->size()));
+    ui->LB_LOGO->setPixmap(QPixmap::fromImage(logo).scaled(ui->LB_LOGO->size(),
+                                                           Qt::KeepAspectRatio,
+                                                           Qt::SmoothTransformation));
 
     SetFireBtnStylesheet(ui->BTN_FIRE_DEVICE_1, 1);
     SetFireBtnStylesheet(ui->BTN_FIRE_DEVICE_2, 1);
@@ -46,6 +50,7 @@ MainWindow::MainWindow(QWidget *parent)
 //    SetBTNColor(ui->BTN_FIRE_DEVICE_2, COLOR_GOOD);
 //    SetBTNColor(ui->BTN_INPUT_DEVICE, COLOR_GOOD);
 //    SetBTNColor(ui->BTN_OUTPUT_DEVICE, COLOR_GOOD);
+
 
 
     QString setting_path = appPath + "SETTING/setting.ini";
@@ -68,6 +73,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->LB_HISTORY_MENU_NAME_3->setText(MENUS[2].menu_name);
     ui->LB_HISTORY_MENU_NAME_4->setText(MENUS[3].menu_name);
     ui->LB_HISTORY_MENU_NAME_5->setText(MENUS[4].menu_name);
+    ui->LB_HISTORY_MENU_NAME_6->setText(MENUS[5].menu_name);
 
 
     //--------------------------------
@@ -97,30 +103,30 @@ MainWindow::MainWindow(QWidget *parent)
     //--------------------------------
     DialogInput *tempInput1 = new DialogInput(ui->FRAME_INPUT_1);
     DialogInput *tempInput2 = new DialogInput(ui->FRAME_INPUT_2);
-    DialogInput *tempInput3 = new DialogInput(ui->FRAME_INPUT_3);
+//    DialogInput *tempInput3 = new DialogInput(ui->FRAME_INPUT_3);
 
     tempInput1->SetInputNumber(0);
     tempInput2->SetInputNumber(1);
-    tempInput3->SetInputNumber(2);
+//    tempInput3->SetInputNumber(2);
     tempInput1->SetSensorDIO(0);
     tempInput2->SetSensorDIO(1);
-    tempInput3->SetSensorDIO(12);
+//    tempInput3->SetSensorDIO(12);
 
     tempInput1->setWindowFlags(Qt::Widget);
     tempInput2->setWindowFlags(Qt::Widget);
-    tempInput3->setWindowFlags(Qt::Widget);
+//    tempInput3->setWindowFlags(Qt::Widget);
 
     tempInput1->move(0, 0);
     tempInput2->move(0, 0);
-    tempInput3->move(0, 0);
+//    tempInput3->move(0, 0);
 
     tempInput1->SetInputName("#1");
     tempInput2->SetInputName("#2");
-    tempInput3->SetInputName("#3");
+//    tempInput3->SetInputName("#3");
 
     inputs.push_back(tempInput1);
     inputs.push_back(tempInput2);
-    inputs.push_back(tempInput3);
+//    inputs.push_back(tempInput3);
 
     pinputs = &inputs;
 
@@ -148,6 +154,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     timer = new QTimer(this);
     connect(timer,SIGNAL(timeout()), this, SLOT(onTimer()));
+    connect(timer, &QTimer::timeout, this, &MainWindow::changeTextColor);
     timer->start(500);
 
     showFullScreen();
@@ -171,13 +178,15 @@ void MainWindow::onTimer(){
     int menu_num_3 = history->GetResult(MENUS[2].menu_name);
     int menu_num_4 = history->GetResult(MENUS[3].menu_name);
     int menu_num_5 = history->GetResult(MENUS[4].menu_name);
-    int menu_num_all = menu_num_1+menu_num_2+menu_num_3+menu_num_4+menu_num_5;
+    int menu_num_6 = history->GetResult(MENUS[5].menu_name);
+    int menu_num_all = menu_num_1+menu_num_2+menu_num_3+menu_num_4+menu_num_5+menu_num_6;
 
     ui->LE_HISTORY_MENU_NUM_1->setText(QString().sprintf("%d", menu_num_1));
     ui->LE_HISTORY_MENU_NUM_2->setText(QString().sprintf("%d", menu_num_2));
     ui->LE_HISTORY_MENU_NUM_3->setText(QString().sprintf("%d", menu_num_3));
     ui->LE_HISTORY_MENU_NUM_4->setText(QString().sprintf("%d", menu_num_4));
     ui->LE_HISTORY_MENU_NUM_5->setText(QString().sprintf("%d", menu_num_5));
+    ui->LE_HISTORY_MENU_NUM_6->setText(QString().sprintf("%d", menu_num_6));
     ui->LE_HISTORY_MENU_NUM_ALL->setText(QString().sprintf("%d", menu_num_all));
 }
 
@@ -319,4 +328,67 @@ void MainWindow::on_BTN_MINIMIZE_released(){
         showMinimized();
     }
     ui->BTN_MINIMIZE->setStyleSheet("font: 12pt \"함초롬돋움\"; background-color: #99FF99; border-radius: 10px; border: 0px solid #595959;");
+}
+
+
+//void MainWindow::changeTextColor()
+//{
+//    static int colorIndex = 0;
+//    static QLabel* stsLabel = nullptr;
+//    const QStringList colorList = {"#A0D468", "#4FC1E9", "#FFCE54", "#FC6E51", "#ED5565", "#AC92EC"};
+
+//    // Create a label if it doesn't exist yet
+//    if (!stsLabel) {
+//        // Create a new label that's definitely visible
+//        stsLabel = new QLabel("STS", this);
+
+//        // Position it in an area that should be visible
+//        stsLabel->setGeometry(1040, 700, 300, 200);
+
+//        // Make sure it's on top of everything
+//        stsLabel->raise();
+//    }
+
+//    // Change text color with transparent background
+//    QString color = colorList.at(colorIndex);
+//    stsLabel->setStyleSheet("QLabel {background-color: transparent; color: " + color +
+//                            "; font-size: 80px; font-weight: bold; padding: 20px;}");
+
+//    // Create drop shadow effect
+//    QGraphicsDropShadowEffect *shadowEffect = new QGraphicsDropShadowEffect;
+//    shadowEffect->setColor(QColor(color));
+//    shadowEffect->setBlurRadius(10);
+//    shadowEffect->setOffset(3, 3);
+
+//    stsLabel->setGraphicsEffect(shadowEffect);
+
+//    // Make sure it's visible
+//    stsLabel->show();
+//    stsLabel->raise();
+
+//    // Increment color
+//    colorIndex = (colorIndex + 1) % colorList.size();
+//}
+
+void MainWindow::changeTextColor()
+{
+    static int colorIndex = 0;
+    const QStringList colorList = {"#A0D468", "#4FC1E9", "#FFCE54", "#FC6E51", "#ED5565", "#AC92EC"};
+
+    // Change text Color
+    QString color = colorList.at(colorIndex);
+    ui->NewLB->setStyleSheet("QLabel {color: " + color + "; font-size: 85px; font:bold; }");
+
+    //Create drope shadow effect
+    QGraphicsDropShadowEffect *shadowEffect = new QGraphicsDropShadowEffect;
+    shadowEffect->setColor(QColor(color));
+    shadowEffect->setBlurRadius(70);
+    shadowEffect->setOffset(7, 7);
+
+    // Apply stylesheet and drop shadow effect to the label
+//    ui->LB_STS->setStyleSheet(stylesheet);
+    ui->NewLB->setGraphicsEffect(shadowEffect);
+
+    // Increment color index loop back to start if needed
+    colorIndex = (colorIndex + 1)%colorList.size();
 }

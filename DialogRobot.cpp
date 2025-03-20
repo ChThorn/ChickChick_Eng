@@ -15,6 +15,7 @@ DialogRobot::DialogRobot(QWidget *parent) :
     ui(new Ui::DialogRobot)
 {
     ui->setupUi(this);
+    setupButtonStyles();
 
     cmdConnectionStatus = false;
     dataConnectionStatus = false;
@@ -823,4 +824,54 @@ void DialogRobot::on_BTN_ROBOT_RESUME_PAUSED_clicked(){
 void DialogRobot::on_BTN_ROBOT_HALT_clicked(){
     MotionHalt();
     plog->write("[UI OPERATION - ROBOT] 정지");
+}
+
+// Add this method to DialogRobot.cpp
+void DialogRobot::setupButtonStyles() {
+    // First, adjust the text to use a newline if needed
+    if (ui->BTN_ROBOT_TASK_START->text().contains("Motion")) {
+        ui->BTN_ROBOT_TASK_START->setText("Motion\nStart");
+    }
+
+    if (ui->BTN_ROBOT_TASK_STOP->text().contains("Motion")) {
+        ui->BTN_ROBOT_TASK_STOP->setText("Motion\nStop");
+    }
+
+    // Start button - Green with text wrapping
+    ui->BTN_ROBOT_TASK_START->setStyleSheet(
+        "QPushButton {"
+        "   font-family: Arial, sans-serif;"
+        "   font-size: 13pt;"
+        "   font-weight: bold;"
+        "   color: white;"
+        "   background-color: #27ae60;"
+        "   border-radius: 8px;"
+        "   padding: 8px 12px;"
+        "   min-height: 35px;"
+        "   min-width: 100px;"  // Ensure enough width
+        "   text-align: center;"
+        "}"
+        "QPushButton:hover { background-color: #2ecc71; }"
+        "QPushButton:pressed { background-color: #1d8348; }"
+        "QPushButton:disabled { background-color: #95a5a6; }"
+    );
+
+    // Stop button - Red with text wrapping
+    ui->BTN_ROBOT_TASK_STOP->setStyleSheet(
+        "QPushButton {"
+        "   font-family: Arial, sans-serif;"
+        "   font-size: 13pt;"
+        "   font-weight: bold;"
+        "   color: white;"
+        "   background-color: #c0392b;"
+        "   border-radius: 8px;"
+        "   padding: 8px 12px;"
+        "   min-height: 35px;"
+        "   min-width: 100px;"  // Ensure enough width
+        "   text-align: center;"
+        "}"
+        "QPushButton:hover { background-color: #e74c3c; }"
+        "QPushButton:pressed { background-color: #922b21; }"
+        "QPushButton:disabled { background-color: #95a5a6; }"
+    );
 }

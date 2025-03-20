@@ -16,8 +16,18 @@ DialogInput::DialogInput(QWidget *parent) :
     buttons.push_back(ui->BTN_MENU_3);
     buttons.push_back(ui->BTN_MENU_4);
     buttons.push_back(ui->BTN_MENU_5);
+    buttons.push_back(ui->BTN_MENU_6);
     for(int i=0; i<MENU_TYPE_NUM; i++){
-        buttons[i]->setText(MENUS[i].menu_name);
+//        buttons[i]->setText(MENUS[i].menu_name);
+        QString menuName = MENUS[i].menu_name;
+
+        // Check if the menu name contains a space and is longer than a certain threshold
+        if(menuName.contains(" ") && menuName.length() > 8) {
+            // Replace the last space with a newline
+            menuName.replace(menuName.lastIndexOf(" "), 1, "\n");
+        }
+
+        buttons[i]->setText(menuName);
     }
 
     MenuSelected = -1;
@@ -105,6 +115,10 @@ void DialogInput::on_BTN_MENU_4_clicked(){
 }
 void DialogInput::on_BTN_MENU_5_clicked(){
     SelectMenu(4);
+}
+
+void DialogInput::on_BTN_MENU_6_clicked(){
+    SelectMenu(5);
 }
 
 void DialogInput::SelectMenu(int menu){

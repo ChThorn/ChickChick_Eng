@@ -14,6 +14,7 @@
 #include "Scheduler.h"
 #include "Logger.h"
 
+#include <QGraphicsDropShadowEffect>
 
 
 QT_BEGIN_NAMESPACE
@@ -78,6 +79,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QTimer *timer;
+//    QLabel *NewLB;
 
     void SetFireBtnStylesheet(QPushButton *btn, int onoff);
 
@@ -85,5 +87,7 @@ private:
     QTime   exit_time;
     QTime   restart_time;
     QTime   minimize_time;
+
+    void changeTextColor();
 };
 #endif // MAINWINDOW_H

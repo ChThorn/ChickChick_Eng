@@ -150,6 +150,7 @@ private:
 
     int system_forced_stop_flag;
     int data_recv_count;
+    void setupButtonStyles();
 };
 
 

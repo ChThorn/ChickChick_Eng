@@ -41,6 +41,7 @@ private slots:
     void on_BTN_MENU_4_clicked();
 
     void on_BTN_MENU_5_clicked();
+    void on_BTN_MENU_6_clicked();
 
 private:
     Ui::DialogInput *ui;

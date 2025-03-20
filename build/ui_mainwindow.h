@@ -44,7 +44,6 @@ public:
     QPushButton *BTN_INPUT_DEVICE;
     QFrame *FRAME_INPUT_1;
     QFrame *FRAME_INPUT_2;
-    QFrame *FRAME_INPUT_3;
     QFrame *FRAME_OUTPUT_ALL;
     QPushButton *BTN_OUTPUT_DEVICE;
     QFrame *FRAME_OUTPUT_2;
@@ -71,12 +70,16 @@ public:
     QLabel *label_5;
     QLabel *label_6;
     QLabel *label_7;
+    QLabel *label_8;
+    QLabel *LB_HISTORY_MENU_NAME_6;
+    QLineEdit *LE_HISTORY_MENU_NUM_6;
     QFrame *FRAME_HISTORY_SHADOW;
     QFrame *FRAME_HISTORY_SHADOW_2;
     QFrame *FRAME_HISTORY_SHADOW_3;
     QFrame *FRAME_HISTORY_SHADOW_4;
     QFrame *FRAME_HISTORY_SHADOW_13;
     QLabel *LB_LOGO;
+    QLabel *NewLB;
     QPushButton *BTN_TEST_SEN_ON_4;
     QPushButton *BTN_TEST_SEN_ON_1;
     QPushButton *BTN_TEST_SEN_OFF_1;
@@ -120,7 +123,7 @@ public:
         MAIN_FRAME->setFrameShadow(QFrame::Raised);
         FRAME_OIL_1 = new QFrame(MAIN_FRAME);
         FRAME_OIL_1->setObjectName(QString::fromUtf8("FRAME_OIL_1"));
-        FRAME_OIL_1->setGeometry(QRect(30, 110, 561, 411));
+        FRAME_OIL_1->setGeometry(QRect(30, 150, 561, 411));
         FRAME_OIL_1->setStyleSheet(QString::fromUtf8("QFrame { \n"
 "   border: 0px solid #595959;\n"
 "   background-color: #ECC6C6;\n"
@@ -211,7 +214,7 @@ public:
 ""));
         FRAME_OIL_2 = new QFrame(MAIN_FRAME);
         FRAME_OIL_2->setObjectName(QString::fromUtf8("FRAME_OIL_2"));
-        FRAME_OIL_2->setGeometry(QRect(620, 110, 561, 411));
+        FRAME_OIL_2->setGeometry(QRect(620, 150, 561, 411));
         FRAME_OIL_2->setStyleSheet(QString::fromUtf8("QFrame { \n"
 "   border: 0px solid #595959;\n"
 "   background-color: #ECC6C6;\n"
@@ -284,7 +287,7 @@ public:
 ""));
         FRAME_INPUT_ALL = new QFrame(MAIN_FRAME);
         FRAME_INPUT_ALL->setObjectName(QString::fromUtf8("FRAME_INPUT_ALL"));
-        FRAME_INPUT_ALL->setGeometry(QRect(30, 550, 961, 491));
+        FRAME_INPUT_ALL->setGeometry(QRect(30, 575, 641, 466));
         FRAME_INPUT_ALL->setStyleSheet(QString::fromUtf8("QFrame { \n"
 "   border: 0px solid #595959 ;\n"
 "   background-color: #FFFF95;\n"
@@ -302,7 +305,7 @@ public:
         FRAME_INPUT_ALL->setLineWidth(2);
         BTN_INPUT_DEVICE = new QPushButton(FRAME_INPUT_ALL);
         BTN_INPUT_DEVICE->setObjectName(QString::fromUtf8("BTN_INPUT_DEVICE"));
-        BTN_INPUT_DEVICE->setGeometry(QRect(0, 0, 961, 71));
+        BTN_INPUT_DEVICE->setGeometry(QRect(0, 0, 641, 71));
         BTN_INPUT_DEVICE->setFont(font);
         BTN_INPUT_DEVICE->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "	border:0px solid #595959;\n"
@@ -314,7 +317,7 @@ public:
 "}"));
         FRAME_INPUT_1 = new QFrame(FRAME_INPUT_ALL);
         FRAME_INPUT_1->setObjectName(QString::fromUtf8("FRAME_INPUT_1"));
-        FRAME_INPUT_1->setGeometry(QRect(10, 80, 301, 401));
+        FRAME_INPUT_1->setGeometry(QRect(10, 80, 301, 378));
         FRAME_INPUT_1->setStyleSheet(QString::fromUtf8("QFrame { \n"
 "   border: 0px solid #595959;\n"
 "   background-color: #ECDC26;\n"
@@ -325,7 +328,7 @@ public:
         FRAME_INPUT_1->setLineWidth(2);
         FRAME_INPUT_2 = new QFrame(FRAME_INPUT_ALL);
         FRAME_INPUT_2->setObjectName(QString::fromUtf8("FRAME_INPUT_2"));
-        FRAME_INPUT_2->setGeometry(QRect(330, 80, 301, 401));
+        FRAME_INPUT_2->setGeometry(QRect(330, 80, 301, 378));
         FRAME_INPUT_2->setStyleSheet(QString::fromUtf8("QFrame { \n"
 "   border: 0px solid #595959;\n"
 "   background-color: #ECDC26;\n"
@@ -333,19 +336,9 @@ public:
 "} "));
         FRAME_INPUT_2->setFrameShape(QFrame::Box);
         FRAME_INPUT_2->setFrameShadow(QFrame::Raised);
-        FRAME_INPUT_3 = new QFrame(FRAME_INPUT_ALL);
-        FRAME_INPUT_3->setObjectName(QString::fromUtf8("FRAME_INPUT_3"));
-        FRAME_INPUT_3->setGeometry(QRect(650, 80, 301, 401));
-        FRAME_INPUT_3->setStyleSheet(QString::fromUtf8("QFrame { \n"
-"   border: 0px solid #595959;\n"
-"   background-color: #ECDC26;\n"
-"   border-radius:16px;\n"
-"} "));
-        FRAME_INPUT_3->setFrameShape(QFrame::Box);
-        FRAME_INPUT_3->setFrameShadow(QFrame::Raised);
         FRAME_OUTPUT_ALL = new QFrame(MAIN_FRAME);
         FRAME_OUTPUT_ALL->setObjectName(QString::fromUtf8("FRAME_OUTPUT_ALL"));
-        FRAME_OUTPUT_ALL->setGeometry(QRect(1027, 550, 561, 491));
+        FRAME_OUTPUT_ALL->setGeometry(QRect(1027, 575, 561, 466));
         FRAME_OUTPUT_ALL->setStyleSheet(QString::fromUtf8("QFrame { \n"
 "   border: 0px solid #595959 ;\n"
 "   background-color: #B5FFB5;\n"
@@ -375,7 +368,7 @@ public:
 "}"));
         FRAME_OUTPUT_2 = new QFrame(FRAME_OUTPUT_ALL);
         FRAME_OUTPUT_2->setObjectName(QString::fromUtf8("FRAME_OUTPUT_2"));
-        FRAME_OUTPUT_2->setGeometry(QRect(290, 160, 261, 321));
+        FRAME_OUTPUT_2->setGeometry(QRect(290, 140, 261, 321));
         FRAME_OUTPUT_2->setStyleSheet(QString::fromUtf8("QFrame { \n"
 "   border: 0px solid #595959;\n"
 "   background-color: #60D88D;\n"
@@ -385,7 +378,7 @@ public:
         FRAME_OUTPUT_2->setFrameShadow(QFrame::Raised);
         FRAME_OUTPUT_1 = new QFrame(FRAME_OUTPUT_ALL);
         FRAME_OUTPUT_1->setObjectName(QString::fromUtf8("FRAME_OUTPUT_1"));
-        FRAME_OUTPUT_1->setGeometry(QRect(10, 160, 261, 321));
+        FRAME_OUTPUT_1->setGeometry(QRect(10, 140, 261, 321));
         FRAME_OUTPUT_1->setStyleSheet(QString::fromUtf8("QFrame { \n"
 "   border: 0px solid #595959;\n"
 "   background-color: #60D88D;\n"
@@ -395,7 +388,7 @@ public:
         FRAME_OUTPUT_1->setFrameShadow(QFrame::Raised);
         LE_OUTPUT_SENSE = new QLineEdit(FRAME_OUTPUT_ALL);
         LE_OUTPUT_SENSE->setObjectName(QString::fromUtf8("LE_OUTPUT_SENSE"));
-        LE_OUTPUT_SENSE->setGeometry(QRect(100, 90, 81, 51));
+        LE_OUTPUT_SENSE->setGeometry(QRect(100, 80, 81, 51));
         LE_OUTPUT_SENSE->setStyleSheet(QString::fromUtf8("QLineEdit{ \n"
 "   border: 0px solid;\n"
 "   font: 15pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
@@ -407,7 +400,7 @@ public:
         LE_OUTPUT_SENSE->setReadOnly(true);
         LE_OUTPUT_SENSE_2 = new QLineEdit(FRAME_OUTPUT_ALL);
         LE_OUTPUT_SENSE_2->setObjectName(QString::fromUtf8("LE_OUTPUT_SENSE_2"));
-        LE_OUTPUT_SENSE_2->setGeometry(QRect(380, 90, 81, 51));
+        LE_OUTPUT_SENSE_2->setGeometry(QRect(380, 80, 81, 51));
         LE_OUTPUT_SENSE_2->setStyleSheet(QString::fromUtf8("QLineEdit{ \n"
 "   border: 0px solid;\n"
 "   font: 15pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
@@ -419,7 +412,7 @@ public:
         LE_OUTPUT_SENSE_2->setReadOnly(true);
         FRAME_HISTORY = new QFrame(MAIN_FRAME);
         FRAME_HISTORY->setObjectName(QString::fromUtf8("FRAME_HISTORY"));
-        FRAME_HISTORY->setGeometry(QRect(1210, 110, 381, 411));
+        FRAME_HISTORY->setGeometry(QRect(1210, 150, 381, 411));
         FRAME_HISTORY->setStyleSheet(QString::fromUtf8("QFrame { \n"
 "   border: 0px solid #595959 ;\n"
 "   background-color: #95CFFF;\n"
@@ -449,7 +442,7 @@ public:
 "}"));
         LB_HISTORY_MENU_NAME_1 = new QLabel(FRAME_HISTORY);
         LB_HISTORY_MENU_NAME_1->setObjectName(QString::fromUtf8("LB_HISTORY_MENU_NAME_1"));
-        LB_HISTORY_MENU_NAME_1->setGeometry(QRect(40, 80, 161, 41));
+        LB_HISTORY_MENU_NAME_1->setGeometry(QRect(40, 80, 191, 35));
         QFont font3;
         font3.setFamily(QString::fromUtf8("\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200"));
         font3.setPointSize(18);
@@ -465,10 +458,12 @@ public:
 "  border-radius: 10px\n"
 "} \n"
 ""));
-        LB_HISTORY_MENU_NAME_1->setAlignment(Qt::AlignCenter);
+        LB_HISTORY_MENU_NAME_1->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        LB_HISTORY_MENU_NAME_1->setMargin(7);
+        LB_HISTORY_MENU_NAME_1->setIndent(-1);
         LE_HISTORY_MENU_NUM_1 = new QLineEdit(FRAME_HISTORY);
         LE_HISTORY_MENU_NUM_1->setObjectName(QString::fromUtf8("LE_HISTORY_MENU_NUM_1"));
-        LE_HISTORY_MENU_NUM_1->setGeometry(QRect(180, 80, 171, 41));
+        LE_HISTORY_MENU_NUM_1->setGeometry(QRect(180, 80, 171, 35));
         LE_HISTORY_MENU_NUM_1->setFont(font1);
         LE_HISTORY_MENU_NUM_1->setStyleSheet(QString::fromUtf8("font: 20pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
 "color: white;\n"
@@ -478,7 +473,7 @@ public:
         LE_HISTORY_MENU_NUM_1->setAlignment(Qt::AlignCenter);
         LB_HISTORY_MENU_NAME_2 = new QLabel(FRAME_HISTORY);
         LB_HISTORY_MENU_NAME_2->setObjectName(QString::fromUtf8("LB_HISTORY_MENU_NAME_2"));
-        LB_HISTORY_MENU_NAME_2->setGeometry(QRect(40, 130, 161, 41));
+        LB_HISTORY_MENU_NAME_2->setGeometry(QRect(40, 123, 191, 35));
         LB_HISTORY_MENU_NAME_2->setFont(font3);
         LB_HISTORY_MENU_NAME_2->setStyleSheet(QString::fromUtf8("QLabel{ \n"
 "   border: 0px solid;\n"
@@ -488,10 +483,11 @@ public:
 "  border-radius: 10px\n"
 "} \n"
 ""));
-        LB_HISTORY_MENU_NAME_2->setAlignment(Qt::AlignCenter);
+        LB_HISTORY_MENU_NAME_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        LB_HISTORY_MENU_NAME_2->setMargin(7);
         LE_HISTORY_MENU_NUM_2 = new QLineEdit(FRAME_HISTORY);
         LE_HISTORY_MENU_NUM_2->setObjectName(QString::fromUtf8("LE_HISTORY_MENU_NUM_2"));
-        LE_HISTORY_MENU_NUM_2->setGeometry(QRect(180, 130, 171, 41));
+        LE_HISTORY_MENU_NUM_2->setGeometry(QRect(180, 123, 171, 35));
         LE_HISTORY_MENU_NUM_2->setFont(font1);
         LE_HISTORY_MENU_NUM_2->setStyleSheet(QString::fromUtf8("font: 20pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
 "color: white;\n"
@@ -501,7 +497,7 @@ public:
         LE_HISTORY_MENU_NUM_2->setAlignment(Qt::AlignCenter);
         LB_HISTORY_MENU_NAME_3 = new QLabel(FRAME_HISTORY);
         LB_HISTORY_MENU_NAME_3->setObjectName(QString::fromUtf8("LB_HISTORY_MENU_NAME_3"));
-        LB_HISTORY_MENU_NAME_3->setGeometry(QRect(40, 180, 161, 41));
+        LB_HISTORY_MENU_NAME_3->setGeometry(QRect(40, 166, 191, 35));
         LB_HISTORY_MENU_NAME_3->setFont(font3);
         LB_HISTORY_MENU_NAME_3->setStyleSheet(QString::fromUtf8("QLabel{ \n"
 "   border: 0px solid;\n"
@@ -511,10 +507,11 @@ public:
 "  border-radius: 10px\n"
 "} \n"
 ""));
-        LB_HISTORY_MENU_NAME_3->setAlignment(Qt::AlignCenter);
+        LB_HISTORY_MENU_NAME_3->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        LB_HISTORY_MENU_NAME_3->setMargin(7);
         LE_HISTORY_MENU_NUM_3 = new QLineEdit(FRAME_HISTORY);
         LE_HISTORY_MENU_NUM_3->setObjectName(QString::fromUtf8("LE_HISTORY_MENU_NUM_3"));
-        LE_HISTORY_MENU_NUM_3->setGeometry(QRect(180, 180, 171, 41));
+        LE_HISTORY_MENU_NUM_3->setGeometry(QRect(180, 166, 171, 35));
         LE_HISTORY_MENU_NUM_3->setFont(font1);
         LE_HISTORY_MENU_NUM_3->setStyleSheet(QString::fromUtf8("font: 20pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
 "color: white;\n"
@@ -524,7 +521,7 @@ public:
         LE_HISTORY_MENU_NUM_3->setAlignment(Qt::AlignCenter);
         LB_HISTORY_MENU_NAME_4 = new QLabel(FRAME_HISTORY);
         LB_HISTORY_MENU_NAME_4->setObjectName(QString::fromUtf8("LB_HISTORY_MENU_NAME_4"));
-        LB_HISTORY_MENU_NAME_4->setGeometry(QRect(40, 230, 161, 41));
+        LB_HISTORY_MENU_NAME_4->setGeometry(QRect(40, 210, 191, 35));
         LB_HISTORY_MENU_NAME_4->setFont(font3);
         LB_HISTORY_MENU_NAME_4->setStyleSheet(QString::fromUtf8("QLabel{ \n"
 "   border: 0px solid;\n"
@@ -534,10 +531,11 @@ public:
 "  border-radius: 10px\n"
 "} \n"
 ""));
-        LB_HISTORY_MENU_NAME_4->setAlignment(Qt::AlignCenter);
+        LB_HISTORY_MENU_NAME_4->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        LB_HISTORY_MENU_NAME_4->setMargin(7);
         LE_HISTORY_MENU_NUM_4 = new QLineEdit(FRAME_HISTORY);
         LE_HISTORY_MENU_NUM_4->setObjectName(QString::fromUtf8("LE_HISTORY_MENU_NUM_4"));
-        LE_HISTORY_MENU_NUM_4->setGeometry(QRect(180, 230, 171, 41));
+        LE_HISTORY_MENU_NUM_4->setGeometry(QRect(180, 210, 171, 35));
         LE_HISTORY_MENU_NUM_4->setFont(font1);
         LE_HISTORY_MENU_NUM_4->setStyleSheet(QString::fromUtf8("font: 20pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
 "color: white;\n"
@@ -547,7 +545,7 @@ public:
         LE_HISTORY_MENU_NUM_4->setAlignment(Qt::AlignCenter);
         LB_HISTORY_MENU_NAME_5 = new QLabel(FRAME_HISTORY);
         LB_HISTORY_MENU_NAME_5->setObjectName(QString::fromUtf8("LB_HISTORY_MENU_NAME_5"));
-        LB_HISTORY_MENU_NAME_5->setGeometry(QRect(40, 280, 161, 41));
+        LB_HISTORY_MENU_NAME_5->setGeometry(QRect(40, 253, 191, 35));
         LB_HISTORY_MENU_NAME_5->setFont(font3);
         LB_HISTORY_MENU_NAME_5->setStyleSheet(QString::fromUtf8("QLabel{ \n"
 "   border: 0px solid;\n"
@@ -557,10 +555,11 @@ public:
 "  border-radius: 10px\n"
 "} \n"
 ""));
-        LB_HISTORY_MENU_NAME_5->setAlignment(Qt::AlignCenter);
+        LB_HISTORY_MENU_NAME_5->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        LB_HISTORY_MENU_NAME_5->setMargin(7);
         LE_HISTORY_MENU_NUM_5 = new QLineEdit(FRAME_HISTORY);
         LE_HISTORY_MENU_NUM_5->setObjectName(QString::fromUtf8("LE_HISTORY_MENU_NUM_5"));
-        LE_HISTORY_MENU_NUM_5->setGeometry(QRect(180, 280, 171, 41));
+        LE_HISTORY_MENU_NUM_5->setGeometry(QRect(180, 253, 171, 35));
         LE_HISTORY_MENU_NUM_5->setFont(font1);
         LE_HISTORY_MENU_NUM_5->setStyleSheet(QString::fromUtf8("font: 20pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
 "color: white;\n"
@@ -570,7 +569,7 @@ public:
         LE_HISTORY_MENU_NUM_5->setAlignment(Qt::AlignCenter);
         LB_HISTORY_MENU_NAME_ALL = new QLabel(FRAME_HISTORY);
         LB_HISTORY_MENU_NAME_ALL->setObjectName(QString::fromUtf8("LB_HISTORY_MENU_NAME_ALL"));
-        LB_HISTORY_MENU_NAME_ALL->setGeometry(QRect(40, 340, 161, 51));
+        LB_HISTORY_MENU_NAME_ALL->setGeometry(QRect(40, 343, 161, 51));
         LB_HISTORY_MENU_NAME_ALL->setFont(font1);
         LB_HISTORY_MENU_NAME_ALL->setStyleSheet(QString::fromUtf8("QLabel{ \n"
 "   border: 0px solid;\n"
@@ -583,7 +582,7 @@ public:
         LB_HISTORY_MENU_NAME_ALL->setAlignment(Qt::AlignCenter);
         LE_HISTORY_MENU_NUM_ALL = new QLineEdit(FRAME_HISTORY);
         LE_HISTORY_MENU_NUM_ALL->setObjectName(QString::fromUtf8("LE_HISTORY_MENU_NUM_ALL"));
-        LE_HISTORY_MENU_NUM_ALL->setGeometry(QRect(180, 340, 171, 51));
+        LE_HISTORY_MENU_NUM_ALL->setGeometry(QRect(180, 343, 171, 51));
         QFont font4;
         font4.setFamily(QString::fromUtf8("\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200"));
         font4.setPointSize(28);
@@ -598,40 +597,70 @@ public:
         LE_HISTORY_MENU_NUM_ALL->setAlignment(Qt::AlignCenter);
         label = new QLabel(FRAME_HISTORY);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(35, 335, 321, 61));
+        label->setGeometry(QRect(35, 338, 321, 61));
         label->setStyleSheet(QString::fromUtf8("font: 20pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
 "background-color: #FFFFFF;\n"
 "border-radius: 14px"));
         label_3 = new QLabel(FRAME_HISTORY);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(37, 277, 317, 47));
+        label_3->setGeometry(QRect(37, 250, 317, 41));
         label_3->setStyleSheet(QString::fromUtf8("font: 20pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
 "background-color: #D4D4D4;\n"
 "border-radius: 14px   "));
         label_4 = new QLabel(FRAME_HISTORY);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(37, 227, 317, 47));
+        label_4->setGeometry(QRect(37, 207, 317, 41));
         label_4->setStyleSheet(QString::fromUtf8("font: 20pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
 "background-color: #D4D4D4;\n"
 "border-radius: 14px   "));
         label_5 = new QLabel(FRAME_HISTORY);
         label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(37, 177, 317, 47));
+        label_5->setGeometry(QRect(37, 163, 317, 41));
         label_5->setStyleSheet(QString::fromUtf8("font: 20pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
 "background-color: #D4D4D4;\n"
 "border-radius: 14px   "));
         label_6 = new QLabel(FRAME_HISTORY);
         label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setGeometry(QRect(37, 127, 317, 47));
+        label_6->setGeometry(QRect(37, 120, 317, 41));
         label_6->setStyleSheet(QString::fromUtf8("font: 20pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
 "background-color: #D4D4D4;\n"
 "border-radius: 14px   "));
         label_7 = new QLabel(FRAME_HISTORY);
         label_7->setObjectName(QString::fromUtf8("label_7"));
-        label_7->setGeometry(QRect(37, 77, 317, 47));
+        label_7->setGeometry(QRect(37, 77, 317, 41));
         label_7->setStyleSheet(QString::fromUtf8("font: 20pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
 "background-color: #D4D4D4;\n"
 "border-radius: 14px   "));
+        label_8 = new QLabel(FRAME_HISTORY);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
+        label_8->setGeometry(QRect(37, 293, 317, 41));
+        label_8->setStyleSheet(QString::fromUtf8("font: 20pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
+"background-color: #D4D4D4;\n"
+"border-radius: 14px   "));
+        LB_HISTORY_MENU_NAME_6 = new QLabel(FRAME_HISTORY);
+        LB_HISTORY_MENU_NAME_6->setObjectName(QString::fromUtf8("LB_HISTORY_MENU_NAME_6"));
+        LB_HISTORY_MENU_NAME_6->setGeometry(QRect(40, 296, 191, 35));
+        LB_HISTORY_MENU_NAME_6->setFont(font3);
+        LB_HISTORY_MENU_NAME_6->setStyleSheet(QString::fromUtf8("QLabel{ \n"
+"   border: 0px solid;\n"
+"   font: 18pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
+"  color: white;\n"
+"  background-color: #76A6DC;\n"
+"  border-radius: 10px\n"
+"} \n"
+""));
+        LB_HISTORY_MENU_NAME_6->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        LB_HISTORY_MENU_NAME_6->setMargin(7);
+        LE_HISTORY_MENU_NUM_6 = new QLineEdit(FRAME_HISTORY);
+        LE_HISTORY_MENU_NUM_6->setObjectName(QString::fromUtf8("LE_HISTORY_MENU_NUM_6"));
+        LE_HISTORY_MENU_NUM_6->setGeometry(QRect(180, 296, 171, 35));
+        LE_HISTORY_MENU_NUM_6->setFont(font1);
+        LE_HISTORY_MENU_NUM_6->setStyleSheet(QString::fromUtf8("font: 20pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
+"color: white;\n"
+"background-color: #76A6DC;\n"
+"border-radius: 10px\n"
+""));
+        LE_HISTORY_MENU_NUM_6->setAlignment(Qt::AlignCenter);
         label_5->raise();
         label_6->raise();
         label_7->raise();
@@ -640,20 +669,23 @@ public:
         label->raise();
         BTN_HISTORY_DEVICE->raise();
         LE_HISTORY_MENU_NUM_1->raise();
-        LB_HISTORY_MENU_NAME_2->raise();
         LE_HISTORY_MENU_NUM_2->raise();
-        LB_HISTORY_MENU_NAME_3->raise();
         LE_HISTORY_MENU_NUM_3->raise();
-        LB_HISTORY_MENU_NAME_4->raise();
         LE_HISTORY_MENU_NUM_4->raise();
-        LB_HISTORY_MENU_NAME_5->raise();
         LE_HISTORY_MENU_NUM_5->raise();
         LB_HISTORY_MENU_NAME_ALL->raise();
         LE_HISTORY_MENU_NUM_ALL->raise();
+        label_8->raise();
+        LE_HISTORY_MENU_NUM_6->raise();
+        LB_HISTORY_MENU_NAME_4->raise();
+        LB_HISTORY_MENU_NAME_3->raise();
+        LB_HISTORY_MENU_NAME_2->raise();
         LB_HISTORY_MENU_NAME_1->raise();
+        LB_HISTORY_MENU_NAME_5->raise();
+        LB_HISTORY_MENU_NAME_6->raise();
         FRAME_HISTORY_SHADOW = new QFrame(MAIN_FRAME);
         FRAME_HISTORY_SHADOW->setObjectName(QString::fromUtf8("FRAME_HISTORY_SHADOW"));
-        FRAME_HISTORY_SHADOW->setGeometry(QRect(1213, 113, 381, 411));
+        FRAME_HISTORY_SHADOW->setGeometry(QRect(1213, 156, 381, 411));
         FRAME_HISTORY_SHADOW->setStyleSheet(QString::fromUtf8("QFrame { \n"
 "   border: 0px solid #595959 ;\n"
 "   background-color: #B4B4B4;\n"
@@ -665,7 +697,7 @@ public:
         FRAME_HISTORY_SHADOW->setLineWidth(2);
         FRAME_HISTORY_SHADOW_2 = new QFrame(MAIN_FRAME);
         FRAME_HISTORY_SHADOW_2->setObjectName(QString::fromUtf8("FRAME_HISTORY_SHADOW_2"));
-        FRAME_HISTORY_SHADOW_2->setGeometry(QRect(623, 113, 561, 411));
+        FRAME_HISTORY_SHADOW_2->setGeometry(QRect(623, 156, 561, 411));
         FRAME_HISTORY_SHADOW_2->setStyleSheet(QString::fromUtf8("QFrame { \n"
 "   border: 0px solid #595959 ;\n"
 "   background-color: #B4B4B4;\n"
@@ -677,7 +709,7 @@ public:
         FRAME_HISTORY_SHADOW_2->setLineWidth(2);
         FRAME_HISTORY_SHADOW_3 = new QFrame(MAIN_FRAME);
         FRAME_HISTORY_SHADOW_3->setObjectName(QString::fromUtf8("FRAME_HISTORY_SHADOW_3"));
-        FRAME_HISTORY_SHADOW_3->setGeometry(QRect(33, 113, 561, 411));
+        FRAME_HISTORY_SHADOW_3->setGeometry(QRect(33, 156, 561, 411));
         FRAME_HISTORY_SHADOW_3->setStyleSheet(QString::fromUtf8("QFrame { \n"
 "   border: 0px solid #595959 ;\n"
 "   background-color: #B4B4B4;\n"
@@ -689,7 +721,7 @@ public:
         FRAME_HISTORY_SHADOW_3->setLineWidth(2);
         FRAME_HISTORY_SHADOW_4 = new QFrame(MAIN_FRAME);
         FRAME_HISTORY_SHADOW_4->setObjectName(QString::fromUtf8("FRAME_HISTORY_SHADOW_4"));
-        FRAME_HISTORY_SHADOW_4->setGeometry(QRect(33, 553, 961, 491));
+        FRAME_HISTORY_SHADOW_4->setGeometry(QRect(33, 573, 641, 471));
         FRAME_HISTORY_SHADOW_4->setStyleSheet(QString::fromUtf8("QFrame { \n"
 "   border: 0px solid #595959 ;\n"
 "   background-color: #B4B4B4;\n"
@@ -701,7 +733,7 @@ public:
         FRAME_HISTORY_SHADOW_4->setLineWidth(2);
         FRAME_HISTORY_SHADOW_13 = new QFrame(MAIN_FRAME);
         FRAME_HISTORY_SHADOW_13->setObjectName(QString::fromUtf8("FRAME_HISTORY_SHADOW_13"));
-        FRAME_HISTORY_SHADOW_13->setGeometry(QRect(1030, 553, 561, 491));
+        FRAME_HISTORY_SHADOW_13->setGeometry(QRect(1030, 580, 561, 466));
         FRAME_HISTORY_SHADOW_13->setStyleSheet(QString::fromUtf8("QFrame { \n"
 "   border: 0px solid #595959 ;\n"
 "   background-color: #B4B4B4;\n"
@@ -713,8 +745,15 @@ public:
         FRAME_HISTORY_SHADOW_13->setLineWidth(2);
         LB_LOGO = new QLabel(MAIN_FRAME);
         LB_LOGO->setObjectName(QString::fromUtf8("LB_LOGO"));
-        LB_LOGO->setGeometry(QRect(0, 0, 1621, 91));
+        LB_LOGO->setGeometry(QRect(2, 0, 1621, 140));
         LB_LOGO->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);"));
+        NewLB = new QLabel(MAIN_FRAME);
+        NewLB->setObjectName(QString::fromUtf8("NewLB"));
+        NewLB->setGeometry(QRect(760, 710, 181, 141));
+        QFont font5;
+        font5.setPointSize(80);
+        NewLB->setFont(font5);
+        NewLB->setAlignment(Qt::AlignCenter);
         FRAME_HISTORY_SHADOW_13->raise();
         FRAME_HISTORY_SHADOW_4->raise();
         FRAME_HISTORY_SHADOW_3->raise();
@@ -726,6 +765,7 @@ public:
         FRAME_OUTPUT_ALL->raise();
         FRAME_HISTORY->raise();
         LB_LOGO->raise();
+        NewLB->raise();
         BTN_TEST_SEN_ON_4 = new QPushButton(centralwidget);
         BTN_TEST_SEN_ON_4->setObjectName(QString::fromUtf8("BTN_TEST_SEN_ON_4"));
         BTN_TEST_SEN_ON_4->setGeometry(QRect(10, 710, 89, 35));
@@ -829,7 +869,10 @@ public:
         label_5->setText(QString());
         label_6->setText(QString());
         label_7->setText(QString());
+        label_8->setText(QString());
+        LB_HISTORY_MENU_NAME_6->setText(QCoreApplication::translate("MainWindow", "Menu", nullptr));
         LB_LOGO->setText(QString());
+        NewLB->setText(QCoreApplication::translate("MainWindow", "STS", nullptr));
         BTN_TEST_SEN_ON_4->setText(QCoreApplication::translate("MainWindow", "Sen 4 On", nullptr));
         BTN_TEST_SEN_ON_1->setText(QCoreApplication::translate("MainWindow", "Sen 0 On", nullptr));
         BTN_TEST_SEN_OFF_1->setText(QCoreApplication::translate("MainWindow", "Sen 0 Off", nullptr));

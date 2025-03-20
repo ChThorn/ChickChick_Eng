@@ -33,19 +33,21 @@ public:
     QLabel *label_4;
     QLabel *label_5;
     QLabel *label_6;
+    QLabel *label_7;
+    QPushButton *BTN_MENU_6;
 
     void setupUi(QDialog *DialogInput)
     {
         if (DialogInput->objectName().isEmpty())
             DialogInput->setObjectName(QString::fromUtf8("DialogInput"));
-        DialogInput->resize(301, 401);
+        DialogInput->resize(301, 378);
         DialogInput->setStyleSheet(QString::fromUtf8("border: 0px solid #595959;\n"
 "background-color: #ECDC26;\n"
 "border-radius: 16px;\n"
 ""));
         BTN_MENU_5 = new QPushButton(DialogInput);
         BTN_MENU_5->setObjectName(QString::fromUtf8("BTN_MENU_5"));
-        BTN_MENU_5->setGeometry(QRect(10, 320, 281, 61));
+        BTN_MENU_5->setGeometry(QRect(10, 280, 131, 81));
         QFont font;
         font.setFamily(QString::fromUtf8("\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200"));
         font.setPointSize(18);
@@ -59,15 +61,17 @@ public:
 "border-radius: 16px;"));
         BTN_MENU_4 = new QPushButton(DialogInput);
         BTN_MENU_4->setObjectName(QString::fromUtf8("BTN_MENU_4"));
-        BTN_MENU_4->setGeometry(QRect(160, 200, 131, 101));
+        BTN_MENU_4->setGeometry(QRect(160, 180, 131, 81));
         BTN_MENU_4->setFont(font);
         BTN_MENU_4->setStyleSheet(QString::fromUtf8("font: 18pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
 "font-weight: bold;\n"
 "background-color: #898989;\n"
-"border-radius: 16px;"));
+"border-radius: 16px;\n"
+"text-align: center;\n"
+"padding: 5px;"));
         BTN_MENU_3 = new QPushButton(DialogInput);
         BTN_MENU_3->setObjectName(QString::fromUtf8("BTN_MENU_3"));
-        BTN_MENU_3->setGeometry(QRect(10, 200, 131, 101));
+        BTN_MENU_3->setGeometry(QRect(10, 180, 131, 81));
         BTN_MENU_3->setFont(font);
         BTN_MENU_3->setStyleSheet(QString::fromUtf8("font: 18pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
 "font-weight: bold;\n"
@@ -75,7 +79,7 @@ public:
 "border-radius: 16px;"));
         LE_INPUT_SENSE = new QLineEdit(DialogInput);
         LE_INPUT_SENSE->setObjectName(QString::fromUtf8("LE_INPUT_SENSE"));
-        LE_INPUT_SENSE->setGeometry(QRect(105, 20, 91, 41));
+        LE_INPUT_SENSE->setGeometry(QRect(105, 15, 91, 41));
         LE_INPUT_SENSE->setStyleSheet(QString::fromUtf8("QLineEdit{\n"
 "  background-color:lightyellow;\n"
 "  font: 25pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\"; \n"
@@ -87,7 +91,7 @@ public:
         LE_INPUT_SENSE->setReadOnly(true);
         BTN_MENU_2 = new QPushButton(DialogInput);
         BTN_MENU_2->setObjectName(QString::fromUtf8("BTN_MENU_2"));
-        BTN_MENU_2->setGeometry(QRect(160, 80, 131, 101));
+        BTN_MENU_2->setGeometry(QRect(160, 80, 131, 81));
         BTN_MENU_2->setFont(font);
         BTN_MENU_2->setStyleSheet(QString::fromUtf8("font: 18pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
 "font-weight: bold;\n"
@@ -95,7 +99,7 @@ public:
 "border-radius: 16px;"));
         BTN_MENU_1 = new QPushButton(DialogInput);
         BTN_MENU_1->setObjectName(QString::fromUtf8("BTN_MENU_1"));
-        BTN_MENU_1->setGeometry(QRect(10, 80, 131, 101));
+        BTN_MENU_1->setGeometry(QRect(10, 80, 131, 81));
         BTN_MENU_1->setFont(font);
         BTN_MENU_1->setStyleSheet(QString::fromUtf8("font: 18pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
 "font-weight: bold;\n"
@@ -103,40 +107,54 @@ public:
 "border-radius: 16px;"));
         label = new QLabel(DialogInput);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(100, 15, 101, 51));
+        label->setGeometry(QRect(100, 10, 101, 51));
         label->setStyleSheet(QString::fromUtf8("font: 20pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
 "background-color: #FFFFFF;\n"
 "border-radius: 20px"));
         label_2 = new QLabel(DialogInput);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(5, 75, 141, 111));
+        label_2->setGeometry(QRect(5, 75, 141, 91));
         label_2->setStyleSheet(QString::fromUtf8("font: 20pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
 "background-color: #FFFFFF;\n"
 "border-radius: 20px"));
         label_3 = new QLabel(DialogInput);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(155, 75, 141, 111));
+        label_3->setGeometry(QRect(155, 75, 141, 91));
         label_3->setStyleSheet(QString::fromUtf8("font: 20pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
 "background-color: #FFFFFF;\n"
 "border-radius: 20px"));
         label_4 = new QLabel(DialogInput);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(155, 195, 141, 111));
+        label_4->setGeometry(QRect(155, 175, 141, 91));
         label_4->setStyleSheet(QString::fromUtf8("font: 20pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
 "background-color: #FFFFFF;\n"
 "border-radius: 20px"));
         label_5 = new QLabel(DialogInput);
         label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(5, 195, 141, 111));
+        label_5->setGeometry(QRect(5, 175, 141, 91));
         label_5->setStyleSheet(QString::fromUtf8("font: 20pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
 "background-color: #FFFFFF;\n"
 "border-radius: 20px"));
         label_6 = new QLabel(DialogInput);
         label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setGeometry(QRect(5, 315, 291, 71));
+        label_6->setGeometry(QRect(5, 275, 141, 91));
         label_6->setStyleSheet(QString::fromUtf8("font: 20pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
 "background-color: #FFFFFF;\n"
 "border-radius: 20px"));
+        label_7 = new QLabel(DialogInput);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setGeometry(QRect(155, 275, 141, 91));
+        label_7->setStyleSheet(QString::fromUtf8("font: 20pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
+"background-color: #FFFFFF;\n"
+"border-radius: 20px"));
+        BTN_MENU_6 = new QPushButton(DialogInput);
+        BTN_MENU_6->setObjectName(QString::fromUtf8("BTN_MENU_6"));
+        BTN_MENU_6->setGeometry(QRect(160, 280, 131, 81));
+        BTN_MENU_6->setFont(font);
+        BTN_MENU_6->setStyleSheet(QString::fromUtf8("font: 18pt \"\355\225\250\354\264\210\353\241\254\353\217\213\354\233\200\";\n"
+"font-weight: bold;\n"
+"background-color: #898989;\n"
+"border-radius: 16px;"));
         label_6->raise();
         label_5->raise();
         label_4->raise();
@@ -149,6 +167,8 @@ public:
         LE_INPUT_SENSE->raise();
         BTN_MENU_2->raise();
         BTN_MENU_1->raise();
+        label_7->raise();
+        BTN_MENU_6->raise();
 
         retranslateUi(DialogInput);
 
@@ -170,6 +190,8 @@ public:
         label_4->setText(QString());
         label_5->setText(QString());
         label_6->setText(QString());
+        label_7->setText(QString());
+        BTN_MENU_6->setText(QCoreApplication::translate("DialogInput", "\353\257\270\354\240\225", nullptr));
     } // retranslateUi
 
 };

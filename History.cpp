@@ -27,7 +27,7 @@ void History::AddResult(int menu, int increase){
         // date is exist
     }else{
         // date is not exist --> make new row
-        query_str = "INSERT INTO history (date, menu1, menu2, menu3, menu4, menu5) VALUES ('" + cur_date + "',0,0,0,0,0)";
+        query_str = "INSERT INTO history (date, menu1, menu2, menu3, menu4, menu5, menu6) VALUES ('" + cur_date + "',0,0,0,0,0,0)";
         query.exec(query_str);
 //        qDebug() << query_str;
     }
